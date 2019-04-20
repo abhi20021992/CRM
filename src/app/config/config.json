@@ -1,0 +1,8 @@
+{
+    "ServiceEndPoints":{
+        "userServiceURL": "http://localhost:2609",
+        "leadService": ""
+    },
+    "clientId":"aG91c2V5LW1vYmlsZS1hcHA",
+    "clientSecret": "aG91c2VleS1jbGllbnQtc2VjcmV"    
+}

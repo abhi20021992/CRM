@@ -1,0 +1,68 @@
+ <div class="login-box">
+  <div class="login-box-main">
+      <mat-card class="login-registration-card">
+          <mat-card-header>
+            <div mat-card-avatar class="houseey-logo" >houseey</div>
+          </mat-card-header>
+          <mat-card-content fxLayout="column" fxLayoutGap="30px" style="height:500px">
+              <mat-tab-group>
+                  <mat-tab label="Login" > 
+                      <form class="login-form" style="padding-top: 30px ">
+                          <mat-form-field class="field-container">
+                              <input matInput placeholder="Enter your email" [formControl]="email" required>
+                              <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                            </mat-form-field>
+
+                          <mat-form-field class="field-container">
+                              <input matInput placeholder="Enter your password"  [formControl]="password" [type]="hide ? 'password' : 'text'">
+                              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                              </button>
+                            </mat-form-field>
+                           <div>
+                              <mat-checkbox>Rember me next time.</mat-checkbox>
+                           </div> 
+                           <div class="login-button-continer">
+                              <button mat-raised-button class="houseey-primary-btn" (click)="login()" >Login</button>
+                           </div>
+                            
+                        </form>
+                  </mat-tab>
+                  <mat-tab label="Register"> 
+                      <form class="login-form" style="padding-top: 30px ">
+                          <mat-form-field class="field-container">
+                              <input matInput placeholder="Enter your email" [formControl]="firstName" required>
+                              <mat-error *ngIf="firstName.invalid">{{getErrorMessage()}}</mat-error>
+                            </mat-form-field>
+                            <mat-form-field class="field-container">
+                                <input matInput placeholder="Enter your email" [formControl]="lastName" required>
+                                <mat-error *ngIf="lastName.invalid">{{getErrorMessage()}}</mat-error>
+                              </mat-form-field>
+                          <mat-form-field class="field-container">
+                              <input matInput placeholder="Enter your email" [formControl]="email" required>
+                              <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                            </mat-form-field>
+
+                          <mat-form-field class="field-container">
+                              <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+                              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                              </button>
+                            </mat-form-field>
+                            <mat-form-field class="field-container">
+                                <input matInput placeholder="Repeat your password" [type]="hide ? 'passwordconf' : 'text'">
+                                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+                              </mat-form-field>
+                              <div class="register-button-continer">
+                                  <button mat-raised-button class='houseey-primary-btn'>Register</button>
+                              </div>
+                              
+                        </form>
+                  </mat-tab>
+                </mat-tab-group>
+          </mat-card-content>
+        </mat-card>
+  </div>
+</div> 

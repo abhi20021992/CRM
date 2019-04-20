@@ -1,0 +1,13 @@
+<div class="wrapper">
+    <div *ngIf="authentication.isUserAuthenticated()" class="sidebar" data-color="danger" data-background-color="white" data-image="./assets/img/sidebar-1.jpg">
+        <app-sidebar></app-sidebar>
+        <div class="sidebar-background" style="background-image: url(./assets/img/sidebar-4.jpg)"></div>
+    </div>
+    <div class="main-panel">
+        <app-navbar *ngIf="authentication.isUserAuthenticated()"></app-navbar>
+        <router-outlet></router-outlet>
+        <div *ngIf="isMaps('maps') && authentication.isUserAuthenticated()" >
+            <app-footer></app-footer>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+                <div class="card-header card-header-danger">
+                    <h4 class="card-title ">Leads</h4>
+                    <p class="card-category"> Here are the leads you assigned to.</p>
+                    <button class="btn btn-primary btn-sm btn-rounded" style="background-color: rgba(244, 67, 54, 0.8)" type="button" (click)="create()">Create Lead</button>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table mat-table [dataSource]="data" class="mat-elevation-z8" style="width: 100%">
+                            
+                          <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+                            <th mat-header-cell *matHeaderCellDef> {{getColumnDisplayName(column)}} </th>
+                            <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+                          </ng-container>
+                          <ng-container matColumnDef="actions" sticky="true">
+                                <th mat-header-cell *matHeaderCellDef> Actions </th>
+                                <td mat-cell *matCellDef="let element"> <i class="material-icons" style="cursor: pointer" (click)="editLead(element)">edit</i> </td>
+                          </ng-container>
+                          <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+                          <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
+
